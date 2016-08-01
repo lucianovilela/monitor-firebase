@@ -23,20 +23,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+  var config = {
+      apiKey: "AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg",
+      authDomain: "ehatdig.firebaseapp.com",
+      databaseURL: "https://ehatdig.firebaseio.com",
+      storageBucket: "ehatdig.appspot.com",
+    };
+   firebase.initializeApp(config);
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
   .state('app.playlists', {
-  url: '/app/playlists',
-  templateUrl: 'templates/playlists.html',
-
-  controller: 'AppCtrl'
-  });
+      url: '/playlists',
+      views: {
+             'menuContent': {
+               templateUrl: 'templates/playlists.html',
+               controller: 'PlaylistsCtrl'
+             }
+           }
+      })
+      .state('app.playlist', {
+          url: '/playlist/:idCommand',
+          views: {
+                 'menuContent': {
+                   templateUrl: 'templates/playlist.html',
+                   controller: 'PlaylistCtrl'
+                 }
+               }
+          })
+    ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
