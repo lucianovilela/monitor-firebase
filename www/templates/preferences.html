@@ -1,0 +1,24 @@
+
+
+<ion-view view-title="Playlists">
+  <ion-content>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">authDomain</span>
+        <input type="text" placeholder="authDomain" ng-model="authDomain">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">databaseURL</span>
+        <input type="text" placeholder="https://DATABASE.firebaseio.com" ng-model="databaseURL">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">apiKey</span>
+        <input type="text" placeholder="AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg" ng-model="apiKey">
+      </label>
+      <button class="button button-large button-positive" ng-action='store()'>
+          Submit
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

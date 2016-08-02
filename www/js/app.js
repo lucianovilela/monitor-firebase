@@ -56,6 +56,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                  }
                }
           })
+
+          .state('app.preferences', {
+            url: '/preferences',
+            templateUrl: 'templates/preferences.html',
+            controller: 'PreferencesCtrl'
+          })
     ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
