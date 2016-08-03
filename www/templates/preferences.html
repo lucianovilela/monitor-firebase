@@ -1,24 +1,25 @@
-
-
-<ion-view view-title="Playlists">
+<ion-view view-title="Preferences">
   <ion-content>
 
     <div class="list">
+
+
       <label class="item item-input item-stacked-label">
         <span class="input-label">authDomain</span>
-        <input type="text" placeholder="authDomain" ng-model="authDomain">
+        <input type="text" placeholder="authDomain" ng-model="p.authDomain">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">databaseURL</span>
-        <input type="text" placeholder="https://DATABASE.firebaseio.com" ng-model="databaseURL">
+        <input type="text" placeholder="https://DATABASE.firebaseio.com" ng-model="p.databaseURL">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">apiKey</span>
-        <input type="text" placeholder="AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg" ng-model="apiKey">
+        <input type="text" placeholder="AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg" ng-model="p.apiKey">
       </label>
-      <button class="button button-large button-positive" ng-action='store()'>
+      <button class="button button-full button-positive" ng-click='savePreferences(p)'>
           Submit
       </button>
+
     </div>
   </ion-content>
 </ion-view>
