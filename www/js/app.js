@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
-.run(function($ionicPlatform, $rootScope, $cordovaPreferences) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       StatusBar.styleDefault();
 	  
     }
-
+	//window.ga.startTrackerWithId('UA-XXXXXXXX-1');
 
 	
   });
@@ -29,9 +29,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 .config(function($stateProvider, $urlRouterProvider) {
   var config = {
       apiKey: "AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg",
-      authDomain: "ehatdig.firebaseapp.com",
+     // authDomain: "ehatdig.firebaseapp.com",
       databaseURL: "https://ehatdig.firebaseio.com",
-      storageBucket: "ehatdig.appspot.com",
+    //  storageBucket: "ehatdig.appspot.com",
     };
    firebase.initializeApp(config);
   $stateProvider
