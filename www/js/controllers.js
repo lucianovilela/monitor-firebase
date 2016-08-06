@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['firebase', 'googlechart', 'ngCordova'])
+angular.module('starter.controllers', ['firebase', 'googlechart'])
 .controller('AppCtrl', function($scope, $stateParams, $firebaseArray) {
 	window.ga('send', 'pageview');
 	window.ga('send', { hitType: 'pageview', page: "/"});
@@ -32,8 +32,8 @@ angular.module('starter.controllers', ['firebase', 'googlechart', 'ngCordova'])
 			   { id: "s", label: "Value", type: "number" }
 		   ],
 		   "rows": []
-	};	   
-   
+	};
+
   dataRef.on('value', function(snapshot){
       $scope.atualizado = new Date();
 	  console.log(new Date()+"atualizacao");
@@ -56,7 +56,7 @@ angular.module('starter.controllers', ['firebase', 'googlechart', 'ngCordova'])
 		'databaseURL':$window.localStorage.getItem('databaseURL'),
 		'apiKey':$window.localStorage.getItem('apiKey'),
 	}
-	
+
 	$scope.p=p;
 
 	$scope.savePreferences=function(p){
@@ -70,7 +70,7 @@ angular.module('starter.controllers', ['firebase', 'googlechart', 'ngCordova'])
 
 	}
 
-	
-	
+
+
 
 });
