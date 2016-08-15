@@ -17,7 +17,8 @@ angular.module('starter.controllers', ['firebase', 'googlechart'])
 
   $scope.command = $firebaseObject(itemsRef);
 
-  var dataRef =  firebase.database().ref('/monitor/database/'+$stateParams.idCommand+'/data').limitToLast(10);
+  var dataRef =  firebase.database()
+	    .ref('/monitor/database/'+$stateParams.idCommand+'/data').limitToLast(10);
   $scope.chartObject = {};
   $scope.d = [];
   $scope.chartObject.type = "LineChart";
@@ -36,9 +37,10 @@ angular.module('starter.controllers', ['firebase', 'googlechart'])
 
   dataRef.on('value', function(snapshot){
       $scope.atualizado = new Date();
+			$scope.chartObject.data.rows=[];
 	  console.log(new Date()+"atualizacao");
 	  snapshot.forEach(function(value){
-
+			console.log(new Date(value.val().time) + " "+value.val().value);
 		$scope.chartObject.data.rows.push({c: [
              { v: new Date(value.val().time) },
              { v: value.val().value }

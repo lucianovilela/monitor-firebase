@@ -1,15 +1,37 @@
 
 
 <ion-view view-title="Playlists">
-  <ion-content>
-	<div>Nome:{{command.name}}</div>
-	<div>Commando:{{command.exec}}</div>
-  <div>Atualizado:{{atualizado}}</div>
 
-    <div google-chart chart="chartObject"
-	style="width: 100%;height:100%;border: 1px solid green;padding-bottom: 44px"
-	class="has-footer">
-      </div>
+  <ion-tabs class="tabs-positive tabs-icon-top">
 
-  </ion-content>
+    <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+      <div google-chart chart="chartObject"
+  	style="width: 100%;height:100%;border: 1px solid green;padding-bottom: 44px"
+  	class="has-footer">
+        </div>
+    </ion-tab>
+
+    <ion-tab title="Settings" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <div>
+      <div>Nome:{{command.name}}</div>
+    	<div>Commando:{{command.exec}}</div>
+      <div>Atualizado:{{atualizado}}</div>
+    </div>
+    </ion-tab>
+
+    <ion-tab title="Data" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+      <div>
+        <div class="row" ng-repeat="r in chartObject.data.rows">
+            <div class="col">
+              {{r.c[0].v}}
+            </div>
+            <div class="col">
+              {{r.c[1].v}}
+            </div>
+
+        </div>
+      <div>
+    </ion-tab>
+
+  </ion-tabs>
 </ion-view>
