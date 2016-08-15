@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider ) {
   var config = {
       apiKey: "AIzaSyD03tfMzN7KtNrydxx73ScCDeuXhpDjZdg",
      // authDomain: "ehatdig.firebaseapp.com",
@@ -34,6 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //  storageBucket: "ehatdig.appspot.com",
     };
    firebase.initializeApp(config);
+   
+
   $stateProvider
 
   .state('app', {

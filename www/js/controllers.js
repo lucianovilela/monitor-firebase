@@ -1,17 +1,17 @@
 angular.module('starter.controllers', ['firebase', 'googlechart'])
 .controller('AppCtrl', function($scope, $stateParams, $firebaseArray) {
-	window.ga('send', 'pageview');
-	window.ga('send', { hitType: 'pageview', page: "/"});
+//	window.ga('send', 'pageview');
+//	window.ga('send', { hitType: 'pageview', page: "/"});
 
 
 })
 .controller('PlaylistsCtrl', function($scope, $stateParams, $firebaseArray) {
-	window.ga('send', { hitType: 'pageview', page: "/monitor"});
+//	window.ga('send', { hitType: 'pageview', page: "/monitor"});
   var itemsRef =  firebase.database().ref('/monitor/commands');
   $scope.commands = $firebaseArray(itemsRef);
 })
 .controller('PlaylistCtrl', function($scope, $stateParams, $firebaseArray, $firebaseObject) {
-	window.ga('send', { hitType: 'pageview', page: "/monitor/graph"});
+//	window.ga('send', { hitType: 'pageview', page: "/monitor/graph"});
   var itemsRef =  firebase.database().ref('/monitor/commands/'+$stateParams.idCommand);
 
 
@@ -52,7 +52,7 @@ angular.module('starter.controllers', ['firebase', 'googlechart'])
 
 })
 .controller('PreferencesCtrl', function($scope,  $state, $window) {
-	window.ga('send', { hitType: 'pageview', page: "/preferences"});
+//	window.ga('send', { hitType: 'pageview', page: "/preferences"});
 	var p = {
 		'authDomain':$window.localStorage.getItem('authDomain'),
 		'databaseURL':$window.localStorage.getItem('databaseURL'),

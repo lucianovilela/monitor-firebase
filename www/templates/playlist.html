@@ -1,34 +1,56 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="Playlists" cache-view="false">
 
   <ion-tabs class="tabs-positive tabs-icon-top">
 
     <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-      <div google-chart chart="chartObject"
-  	style="width: 100%;height:100%;border: 1px solid green;padding-bottom: 44px"
-  	class="has-footer">
-        </div>
+		<ion-view name="Home">
+			<ion-content class="padding">
+				<div google-chart chart="chartObject"
+					style="width: 100%;height:100%;border: 1px solid green;padding-bottom: 44px"
+					class="has-footer">
+				</div>
+			</ion-content>
+		</ion-view>
     </ion-tab>
-
+	
+	
     <ion-tab title="Settings" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-      <div>
-      <div>Nome:{{command.name}}</div>
-    	<div>Commando:{{command.exec}}</div>
-      <div>Atualizado:{{atualizado}}</div>
-    </div>
-    </ion-tab>
+		<ion-view name="Parameters">
+			<ion-content class="padding">
+				<div>
+					<div>Nome:{{command.name}}</div>
+					<div>Commando:{{command.exec}}</div>
+					<div>Atualizado:{{atualizado}}</div>
+				</div>
+			</ion-content>
+		</ion-view>
+	</ion-tab>
 
     <ion-tab title="Data" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
-      <div>
-        <div class="row" ng-repeat="r in chartObject.data.rows">
-            <div class="col">
-              {{r.c[0].v}}
-            </div>
-            <div class="col">
-              {{r.c[1].v}}
-            </div>
+		<ion-view name="Data">
+			<ion-content class="padding">
+				  <div>
+					<div class="row">
+						<div class="col">
+							Date
+						</div>
+						<div class="col">
+							Value
+						</div>
+					</div>
+					<div class="row" ng-repeat="r in chartObject.data.rows">
+						<div class="col">
+						  {{r.c[0].v}}
+						</div>
+						<div class="col">
+						  {{r.c[1].v}}
+						</div>
 
-        </div>
-    </ion-tab>
+					</div>
+				</div>
+			</ion-content>
+		</ion-view>
+	</ion-tab>
 
   </ion-tabs>
 </ion-view>
