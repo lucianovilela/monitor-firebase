@@ -1,9 +1,11 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="Commands">
   <ion-content>
 
     <ion-list>
       <ion-item ng-repeat="command in commands" href="#/app/playlist/{{command.name}}">
-        {{command.name}}
+			<div>
+			{{command.name}}
+			</div>
       </ion-item>
 
     </ion-list>
