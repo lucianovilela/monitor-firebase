@@ -1,13 +1,12 @@
-<ion-view view-title="Commands">
+<ion-view view-title="Monitor">
   <ion-content>
 
-    <ion-list>
-      <ion-item ng-repeat="command in commands" href="#/app/playlist/{{command.name}}">
-			<div>
+    <div class='list'>
+      <a ng-repeat="command in commands" href="#/app/playlist/{{command.name}}" class='item item-icon-left'>
+			 <i class="icon ion-stats-bars"></i>
 			{{command.name}}
-			</div>
-      </ion-item>
+      </a>
 
-    </ion-list>
+    </div>
   </ion-content>
 </ion-view>
