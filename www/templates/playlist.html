@@ -1,27 +1,27 @@
-<ion-view view-title={{command.name}} cache-view="false">
-<ion-content >
+<ion-view  cache-view="false">
 
-  <ion-slides>
 
-    <ion-slide-page title="Graphic" icon-on="ion-ios-analytics" icon-off="ion-ios-analytics-outline">
+  <ion-tabs class="tabs-positive tabs-icon-top">
+
+    <ion-tab title="Home" icon-on="ion-ios-analytics" icon-off="ion-ios-analytics-outline"  >
 						<div google-chart chart="chartObject"
 							style="width: 100%;height:100%;border: 1px solid green;padding-bottom: 44px"
 							class="has-footer">
 						</div>
 
-	</ion-slide-page>
+	</ion-tab >
 	
 	
-    <ion-slide-page title="Settings" icon-on="ion-ios-more" icon-off="ion-ios-more-outline">
+    <ion-tab title="Settings" icon-on="ion-ios-more" icon-off="ion-ios-more-outline">
 					<div>
 						<div class="row positive">Name</div><div>{{command.name}}</div>
 						<div class="row positive">Command</div><div>{{command.exec}}</div>
 						<div class="row positive">Update at</div><div>{{atualizado}}</div>
 					</div>
 
-	</ion-slide-page>
+	</ion-tab >
 
-    <ion-slide-page title="Data" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+    <ion-tab title="Data" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
 					<div>
 						<div class="row">
 							<div class="col positive">
@@ -41,8 +41,8 @@
 
 						</div>
 					</div>
-	</ion-slide-page>
+	</ion-tab>
 
-  </ion-slides>
-</ion-content>
+  </ion-tabs>
+
 </ion-view>
