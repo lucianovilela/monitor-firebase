@@ -5,12 +5,12 @@ angular.module('starter.controllers', ['firebase', 'googlechart'])
 
 
 })
-.controller('PlaylistsCtrl', function($scope, $stateParams, $firebaseArray) {
+.controller('HomeCtrl', function($scope, $stateParams, $firebaseArray) {
 //	window.ga('send', { hitType: 'pageview', page: "/monitor"});
   var itemsRef =  firebase.database().ref('/monitor/commands');
   $scope.commands = $firebaseArray(itemsRef);
 })
-.controller('PlaylistCtrl', function($scope, $stateParams, $firebaseArray, $firebaseObject) {
+.controller('GraphCtrl', function($scope, $stateParams, $firebaseArray, $firebaseObject) {
 //	window.ga('send', { hitType: 'pageview', page: "/monitor/graph"});
   $scope.chartObject = {};
   $scope.chartObject.options = {
